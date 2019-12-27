@@ -33,7 +33,7 @@ input:focus, textarea:focus{outline: none;}
 .mat-radio-button.mat-accent .mat-radio-inner-circle{background-color: $secondary-color;}
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{border-color: $secondary-color;}
 
-
+.disabled, :disabled{opacity: 0.5;}
 @mixin btn_style($bgColor){
     font-size: $small-font;
     background-color: $bgColor;
@@ -142,13 +142,13 @@ header{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 
     margin-top: 60px;
-    a{
+    a, button{
         @include btn_style($bgColor: $primery-color);
         &:nth-child(2){
-            margin-left: 71px;
+            margin-left: 0px;
         }
     }
     a.cancel{

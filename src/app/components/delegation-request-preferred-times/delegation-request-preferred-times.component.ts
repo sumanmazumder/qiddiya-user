@@ -16,4 +16,7 @@ export class DelegationRequestPreferredTimesComponent implements OnInit {
   next(){
     this.router.navigate(['DelegationRequestThanku'])
   }
+  back(){
+    this.router.navigate(['AddMembers'])
+  }
 }

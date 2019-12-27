@@ -7,15 +7,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./number-of-delegates.component.scss']
 })
 export class NumberOfDelegatesComponent implements OnInit {
-
+  public usernumber: number;
+  public des01: string;
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
-  underFinteen(){
-    this.router.navigate(['registerMemberUnderFifteen'])
+  receivedNumber(e){
+    this.usernumber = e.target.value;
+    console.log(this.usernumber)
   }
-  aboveFifteen(){
-    this.router.navigate(['registerMemberAboveFifteen'])
+  
+  // underFinteen(){
+  //   this.router.navigate(['registerMemberUnderFifteen'])
+  // }
+  // aboveFifteen(){
+  //   this.router.navigate(['registerMemberAboveFifteen'])
+  // }
+  next(){
+    if(this.usernumber <= 15){
+      this.router.navigate(['registerMemberUnderFifteen'])
+    }else{
+      this.router.navigate(['registerMemberAboveFifteen'])
+    }
+    
+  }
+  back(){
+    this.router.navigate(['LeadDelegate'])
   }
 }

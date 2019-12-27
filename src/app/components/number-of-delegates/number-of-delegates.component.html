@@ -8,12 +8,19 @@
 
             <div class="no-of-delegates">
                 <p>Number of Delegates</p>
-                <input type="number" />
-            </div>
+                
+                    <input type="number" (input)="receivedNumber($event)" [(ngModel)]="des01"
+                        min="0" />
+                    
+            
             <div class="next">
-                <a (click)="underFinteen()">NEXT</a>
-                <a (click)="aboveFifteen()">NEXT</a>
+                <!-- <a (click)="underFinteen()">NEXT</a> -->
+                <!-- <a (click)="aboveFifteen()">NEXT</a> -->
+                <!-- <button type="submit" [disabled]="!des01"> Submit </button> -->
+                <a (click)="back()">Back</a>
+                <button type="NEXT"(click)="next()" [disabled]="!des01">NEXT</button>
             </div>
+        
         </div>
     </div>
 </div>

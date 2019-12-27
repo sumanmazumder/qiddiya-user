@@ -26,4 +26,7 @@ export class DelegationTypeComponent implements OnInit {
   individual(){
     
   }
+  back(){
+    this.router.navigate(['welcome'])
+  }
 }

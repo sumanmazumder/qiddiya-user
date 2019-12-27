@@ -18,4 +18,7 @@ export class DelegationReqRegisterMemberAboveFifteenComponent implements OnInit 
   skip(){
     this.router.navigate(['PreferredTimes']);
   }
+  back(){
+    this.router.navigate(['typeOfDelegation']);
+  }
 }
