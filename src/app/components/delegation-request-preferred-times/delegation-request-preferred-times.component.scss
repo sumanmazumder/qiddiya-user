@@ -1,0 +1,81 @@
+@import '../../../styles.scss';
+.choose_date{
+    padding: 0px 15px;
+    .mat-calendar{
+        border:1px solid $primery-color;
+        border-radius: 5px;
+    }
+    h3{
+        font-size: $midium-font;
+        color: $primery-color;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        span{
+            color: $gray-color;
+        }
+    }
+    .choose_time{
+        li{
+            a{
+                border:1px solid $primery-color;
+                border-radius: 3px;
+                color: $gray-color;
+                width: 100%;
+                padding: 5px 10px;
+                margin-bottom: 5px;
+            }
+            
+        }
+        .active{
+            a{
+                background-color: $secondary-color;
+                color: #ffffff;
+            }
+        }
+        .inActive{
+            a{
+                background-color: #b90000;
+                color: #ffffff;
+            }
+        }
+    }
+    .final_date{
+        border-bottom: 1px solid #f1f1f1;
+        margin-bottom: 10px;
+        h3{
+            
+            
+            display: flex;
+            justify-content: space-between;
+            span{
+                color:#000;
+                font-weight: 400;
+                font-size: $small-font;
+            }
+            img{
+                width: 20px;
+            }
+        }
+        li{
+            color: $secondary-color;
+        }
+        label{
+            color: $primery-color;
+            margin-right: 5px;
+        }
+    }
+}
+@media only screen and (max-width:767px){
+    .choose-slot, .choose-time{
+        margin-top: 20px;
+    }
+}
+@media only screen and (max-width:480px){
+
+    
+    .choose_date{
+        h3{
+            font-size: 1em;
+        }
+    }
+}

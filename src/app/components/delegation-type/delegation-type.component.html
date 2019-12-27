@@ -1,0 +1,20 @@
+<div class="row justify-content-center">
+    <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 text-center">
+        <div class="quiddiya_style">
+            <div class="heading">
+                <h1>Delegation Type</h1>
+                <p>Please select the type of delegate you represent</p>
+            </div>
+
+            <div class="btn_group">
+                <button (click)="gevernment()" [ngClass]="status ? 'active' : 'danger'">GOVERNMENT</button>
+                <button (click)="corporate()">CORPORATE</button>
+                <button (click)="media()">MEDIA</button>
+                <button (click)="individual()">INDIVIDUAL</button>
+            </div>
+            <div class="next">
+                <a (click)="next()">NEXT</a>
+            </div>
+        </div>
+    </div>
+</div>

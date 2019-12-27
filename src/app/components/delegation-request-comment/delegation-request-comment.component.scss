@@ -1,0 +1,68 @@
+@import '../../../styles.scss';
+.delegate_request{
+    @extend %flexPrpperty;
+    ul{
+        li{
+            float: left;
+            width: 100%;
+            @extend %flexPrpperty;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            label{
+                font-size: $midium-font;
+                color: $primery-color;
+                text-transform: uppercase;
+                display: inline-block;
+                font-weight: 400;
+                float: left;
+                margin-right: 10px;
+                margin-bottom: 0px;
+            }
+            p{
+                color: $secondary-color;
+                font-size: $midium-font;
+                margin: 0px;
+                line-height: 20px;
+                
+                a{
+                    font-weight: 300;
+                    color: $secondary-color;
+                    font-size: $midium-font;
+                }
+            }
+        }
+    }
+    h3{
+        font-size: $midium-font;
+        color: $primery-color;
+    }
+    textarea{
+        height: 150px;
+        resize: none;
+    }
+}
+@media only screen and (max-width:575px){
+    .delegate_request{
+        h3{
+            font-size: $small-font;
+            margin-top: 10px;
+        }
+        ul{
+            li{
+                margin-bottom: 10px;
+                label{
+                    font-size: $small-font;
+                }
+                p{
+                    font-size: $small-font;
+                    a{
+                        font-size: $small-font;
+                    }
+                }
+            } 
+        }
+        textarea{
+            height: 90px;
+        }
+    }
+}

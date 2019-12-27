@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+
+@font-face {
+    font-family: 'Alcubierre';
+    src: url('../fonts/Alcubierre.eot');
+    src: url('../fonts/Alcubierre.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Alcubierre.woff2') format('woff2'),
+        url('../fonts/Alcubierre.woff') format('woff'),
+        url('../fonts/Alcubierre.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
+p, a{font-family: 'Open Sans', sans-serif;}
+h1, p, h3 {margin:0px;}
+body { line-height: 1 }
+html {  scroll-behavior: smooth;}
+ol, ul { list-style: none }
+
+blockquote, q { quotes: none }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+/* core css */
+
+body { overflow: hidden; }
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  height: 130vh;
+  position: fixed;
+  width: 100%;
+  -webkit-transform: translateY(20vh);
+  -ms-transform: translateY(20vh);
+  transform: translateY(20vh);
+  -webkit-transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1);
+  transition: all 1.4s cubic-bezier(0.22, 0.44, 0, 1);
+}
+
+.background:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.background:first-child {
+  background-image: url("../images/slider01.jpg");
+  -webkit-transform: translateY(-10vh);
+  -ms-transform: translateY(-10vh);
+  transform: translateY(-10vh);
+}
+
+.background:first-child .content-wrapper {
+  -webkit-transform: translateY(10vh);
+  -ms-transform: translateY(10vh);
+  transform: translateY(10vh);
+}
+
+.background:nth-child(2) { background-image: url("../images/slider02.jpg"); }
+
+.background:nth-child(3) { background-image: url("../images/slider03.jpg"); }
+
+/* Set stacking context of slides */
+
+.background:nth-child(1) { z-index: 2; }
+
+.background:nth-child(2) { z-index: 1; }
+
+.content-wrapper {
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transform: translateY(40vh);
+  -ms-transform: translateY(40vh);
+  transform: translateY(40vh);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 1.9s cubic-bezier(0.22, 0.44, 0, 1);
+  transition: all 1.9s cubic-bezier(0.22, 0.44, 0, 1);
+}
+
+.content-title {
+  /*font-family: 'Alcubierre';*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 70px;
+  text-transform: capitalize;
+  font-weight: 700;
+  text-shadow: 0px 0px 10px #00000061;
+  letter-spacing: 0px;
+}
+.content-wrapper p{
+ text-transform: uppercase;
+ font-size: 20px;
+     font-weight: 600;
+} 
+.background a{display: inline-block; margin-top: 40px; color: #ffffff; font-weight: 400; font-size: 22px; text-transform: capitalize;}
+
+/*  header   */
+.header{
+  position: absolute;
+  width: 100%;
+  top:0px;
+  left:0px;
+  right: 0px;
+  z-index: 99;
+  padding: 0px 0px 0px;
+  background-color: rgba(0,0,0,0.5);
+}
+.header-right ul{margin-bottom: 0px;}
+.header-right ul li{display: inline-block; }
+.header-right ul li:last-child{margin-right: 0px;}
+.header-right ul li p, .header-right ul li a{font-size: 15px; color: #fff;}
+.menu{width: 50%; float: left; text-align: center;}
+.menu li a{font-size: 18px !important; font-weight: 300; padding:5px 40px; border-radius: 3px;}
+.menu li a:hover{background-color: #00b0e0; text-decoration: none;}
+li.active a{background-color: #00b0e0 !important;}
+.main-menu{text-align: right;}
+.header-info{text-align: right;}
+.header-info li{margin-right: 15px;}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  background-color: #272d5d;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+
+}
+
+.sidenav a {
+  padding: 15px 8px 15px 20px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.sidenav a:hover {
+  color: #fff;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.sidenav ul{margin:0px; padding: 0px;}
+.sidenav ul li a{border-bottom: 1px solid rgba(255,255,255,0.1); border-left: 3px solid transparent}
+.sidenav ul li a:hover{border-left: 3px solid #ffffff;}
+.sidenav ul ul{background-color: rgba(255,255,255,0.1); display: none; padding: 0px 0px;}
+.sidenav ul ul li a{  font-size: 14px; padding: 10px 0px 10px 30px; border-bottom: 0px; text-transform: uppercase; border-left: 0px;}
+.sidenav ul li:hover ul{display: block;}
+.sidenav ul li a img{float: right; transition: 0.5s;-webkit-transition: 0.5s;-moz-transition: 0.5s;}
+.sidenav ul li:hover a img{transform: rotate(90deg); transition: 0.5s;-webkit-transition: 0.5s;-moz-transition: 0.5s;}
+.sidenav ul ul li a:hover{background-color: #202545;}
+
+
+#main {
+  transition: margin-left .5s;
+  padding: 0px;
+}
+
+
+
+
+/*inner page*/
+.inner-banner{
+  min-height: 310px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  margin-bottom: 30px;
+}
+.inner-banner .container-fluid{display: flex; position: absolute; width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: row;}
+.inner-banner .container-fluid .row{width: 100%; text-align: center;}
+.inner-banner h1{
+  font-family: 'Alcubierre';
+  font-size: 52px;
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
+}
+.inner-banner p{width: 100%; margin-top: 15px;}
+.inner-banner p, .inner-banner a{font-size: 14px; color: #ffffff; font-weight: 400; text-align: center;  display: inline-block;}
+
+/*cemetry map*/
+.cemetery-maps{padding: 90px 0px;}
+.cemetery-maps h3{text-align: center; font-size: 29px; font-weight: 300; text-align: center; width: 100%; margin-bottom: 60px;}
+.cemetery-maps h3 b{font-weight: 600;}
+.cemetery-maps-left a{display: flex; align-items: center; position: relative; color: #000000;}
+.cemetery-maps-left a:hover{text-decoration: none;}
+.cemetery-maps-left img{margin-right: 15px; flex:1;}
+.cemetery-maps-left p{font-size: 16px; line-height: 24px; font-weight: 400; position: relative; flex:5;}
+.cemetery-maps-left p:after{content: ''; position: absolute; left:0px; bottom: -50px; width: 200px; height: 1px ; background: #7f7f7f;}
+
+
+/*cemetery contact*/
+.cemetery-contact{padding: 90px 0px;}
+.cemetery-contact h2{
+  font-size: 20px;
+  color: #636161;
+  font-weight: 400;
+  margin-bottom: 60px;
+}
+.cemetery-contact h3{
+  font-family: 'Alcubierre';
+  color: #fb2056;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.cemetery-contact p, .cemetery-contact a{
+  color: #000000;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+.contact-section{box-shadow: 0px 0px 15px #efefef; padding:40px 30px;}
+.contact-section h3 img{margin-right: 10px;}
+
+/*register cementry*/
+.cemetery-register .row{position: relative; margin-top:-64px}
+.cemetery-register .pagination{width: 100%; margin-bottom: 18px;}
+.cemetery-register .pagination ul{ display: flex; width: 100%; align-items:center; justify-content:space-around; margin-bottom: 0px;     flex-wrap: wrap;}
+.cemetery-register .pagination ul li{ display: inline-block; }
+.cemetery-register .pagination ul li a{ text-transform: uppercase; font-size: 16px; color: #ffffff; border-radius: 35px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; text-align: center;}
+.cemetery-register .pagination ul li a.active{background-color: #fff; color: #3131b9 !important;}
+
+.registreation-right{width: 100%;}
+.cemetery-register{margin-bottom: 60px;}
+.cemetery-register .table{border-right: 1px solid #cccccc; margin-bottom: 0px;     width: 99.9%;}
+.cemetery-register .table thead tr th{ background-color: #f6f6f6; border-bottom: 1px solid #cccccc; padding-top: 15px; padding-bottom: 15px; text-align: center; font-weight: 700;}
+.cemetery-register .table thead tr th:first-child{text-align: left; border-left: 1px solid #cccccc;}
+.cemetery-register .table thead tr th:last-child{border-right: 0px solid #cccccc;}
+.cemetery-register .table thead{position: relative;}
+.cemetery-register .table thead:after{content: '';
+    position: absolute;
+    border: 11px solid #959595;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(-135deg);
+    left: -11px;
+    top: 53px;
+    border-top-color: transparent;
+}
+.cemetery-register .table thead:before{content: '';
+    position: absolute;
+    border: 11px solid #959595;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(-45deg);
+    right: -9px;
+    top: 53px;
+    border-top-color: transparent;
+}
+
+.cemetery-register .table tbody tr td{ border-right: 1px solid #cccccc; font-size: 14px; text-align: center;}
+.cemetery-register .table tbody tr td:first-child{text-align: left; border-left: 1px solid #cccccc;}
+.cemetery-register .table tbody tr td:last-child{ border-right: 0px solid #cccccc;}
+.cemetery-register .table tbody tr:first-child td{border-top:0px;}
+.cemetery-register .table tbody tr td:last-child{ border-right: 0px solid #cccccc }
+.cemetery-register .table tbody tr td:nth-child(5n){/*display: flex;
+    align-items: center; justify-content: space-evenly; padding: 0px;*/ }
+.cemetery-register .table tbody tr td span{background-color: #f6f6f6; padding-top: 15px; padding-bottom: 15px;     width: 80px; border-right: 1px solid #cccccc; flex:1;}
+.cemetery-register .table tbody tr td p{flex:1;}
+.cemetery-register .table tbody tr td a{font-size: 14px; font-weight: 500; color: #2222ab; cursor: pointer;}
+.cemetery-register .table  tbody tr:last-child{border-bottom: 1px solid #cccccc;}
+
+.change{position: fixed; width: 100%; top:0px; background-color: #272d5d; left: 0px; right: 0px; margin:0 auto; padding: 5px 0px; border-radius: 0px; transition: 0.5s; z-index: 9}
+
+
+
+.bonanza-cemetry{padding: 60px 0px;}
+.bonanza-cemetry h3{font-size: 24px; color: #000000; font-weight: 600; margin-bottom: 40px; position: relative;}
+.bonanza-cemetry h3:after{
+  content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -20px;
+    width: 200px;
+    height: 1px;
+    background: #7f7f7f;
+}
+.bonanza-cemetry p{font-size: 16px; color: #4f4f4f; line-height: 24px; }
+.bronza-image img{border:10px solid #e6e6e8; margin-bottom: 30px;}
+.black{background-color: #000; font-size: 14px; color: #fff !important; padding: 5px; margin-top: 20px;}
+.registry-table table tr{margin-bottom: 5px; display: table; width: 100%;}
+.registry-table table tr td{border-top:1px solid #e3e3e3; border-bottom:1px solid #e3e3e3;}
+.registry-table table tr td:first-child{width: 30%; background-color: #ebebeb; padding-left: 15px;  border-left:1px solid #e3e3e3;border-right:1px solid #e3e3e3; }
+.registry-table{margin-bottom: 60px;}
+.registry-table table tr td h3{font-size: 18px; font-weight: 600; margin-bottom: 8px;}
+.registry-table table tr td p{font-size: 14px; font-weight: 400;}
+.registry-table table tr td:last-child{width: 20%; border-left:1px solid #e3e3e3; border-right:1px solid #e3e3e3; text-align: center;}
+.registry-table-image{width: 48%; float: left; max-height: 70px; overflow: hidden;}
+.registry-table table tr td img{}
+.registry-table table tr td:nth-child(2n) p{    padding-left: 15px; line-height: 20px; font-size: 14px;
+}
+.registry-table table tr:last-child td{border-bottom:1px solid #e3e3e3;}
+
+
+
+.cemetery-moses{background-image: url(../images/moues-bg.jpg); background-repeat: no-repeat; background-position: top center; padding: 100px 0px; -webkit-background-size: 100% auto;
+background-size: 100% auto;}
+.cemetery-moses img{margin-bottom: 0px;}
+.cemetery-moses h3{    font-size: 24px;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;}
+.cemetery-moses h3:after{
+  content: '';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin:0 auto;
+    bottom: -20px;
+    width: 200px;
+    height: 1px;
+    background: #7f7f7f;
+}
+.cemetery-moses p{
+  font-size: 16px;
+  color: #4f4f4f;
+  line-height: 30px;
+  width: 80%;
+  margin:0 auto 30px;
+}
+
+
+/*cementry history*/
+.cemetry-history{padding: 60px 0px;}
+.cemetry-history h2{font-size: 25px; font-weight: 300; margin-bottom: 60px; position: relative;}
+.cemetry-history h2:after{    
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -20px;
+    width: 200px;
+    height: 1px;
+    margin:0 auto;
+    background: #7f7f7f;
+  }
+.cemetry-history h2 b{font-weight: 700;}
+.cemetry-history .heading{display: flex; align-items: center; margin-bottom: 14px;}
+.cemetry-history .heading p{font-weight: 600; line-height: 20px; color: #000000; margin-bottom: 0px;     font-size: 14px;}
+.cemetry-history h3{font-size: 18px; border:1px solid #cccccc; display: inline-block; padding: 5px 10px; margin-right: 10px;}
+.cemetry-history p{font-size: 16px; color: #636161; line-height: 30px;     margin-bottom: 30px;}
+
+.modal-content{overflow: hidden;}
+.modal-dialog{margin-top: 20px;}
+.modal-dialog2{margin-top: 0px; margin-bottom: 0px; text-align: center;}
+.modal-dialog2 img{margin:0 auto;}
+.modal-dialog2 h3{font-size: 20px; margin-top: 15px; margin-bottom: 10px;}
+.modal-dialog2 p{font-size: 16px; margin-bottom: 15px;}
+#view .modal-dialog2{border:1px solid #fff;}
+.close{position: absolute;
+    top: -10px;
+    right: -3px;
+    width: 40px;
+    height: 40px;
+    z-index: 999;
+    opacity: 1;
+    background-color: #fff;
+    background-color: #fff !important;
+    border-radius: 50%;
+    line-height: 39px;
+    font-size: 29px;
+    display: inline-block;
+}
+.close:hover{opacity: 1;}
+
+
+#main footer{position: absolute; width: 100%; background-color: #00b0e0; z-index: 99999; bottom: 0px;}
+footer{width: 100%; background-color: #00b0e0; z-index: 99999; bottom: 0px; margin-top: 15%;}
+footer p{font-size: 14px; font-weight: 300; color: #ffffff; padding: 8px 0px;}
+
+/*faq*/
+.faq_section #accordion{
+  width: 100%;
+}
+.faq_section .card .card-header h5{
+  
+}
+.faq_section .card{
+  margin-bottom: 10px;
+}
+.faq_section .card .card-header h5 button{
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  color: #213f98;
+  padding: 0px;
+  font-weight: 600;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  text-transform: capitalize;
+  border:0px;
+  position: relative;
+}
+.faq_section .card .card-header h5 button:after{
+  content: '';
+  position: absolute;
+  top:15px;
+  right: 0px;
+  width: 15px;
+  height: 1px;
+  background-color: #777;
+  transition: 0.7s;
+}
+.faq_section .card .card-header h5 button:before{
+  content: '';
+  position: absolute;
+  top:15px;
+  right: 0px;
+  width: 15px;
+  height: 1px;
+  background-color: #777;
+  transform: rotate(0deg);
+  transition: 0.7s;
+}
+.faq_section .card .card-header h5 button.collapsed:before{
+  transform: rotate(90deg);
+  transition: 0.7s;
+}
+.faq_section .card .card-header h5 button:hover{text-decoration: none;}
+.card-body p{
+  font-size: 15px;
+  line-height: 27px;
+  color: #777;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 1280px) {
+
+}
+@media screen and (max-width: 1124px) {
+
+}
+@media screen and (max-width: 991px) {
+
+}
+@media only screen and (max-width: 767px) {
+  .content-title{font-size: 70px;}
+  .logo{text-align: center; margin-bottom: 20px;}
+  .header-right ul{text-align: center; padding: 0px;}
+  .header-right ul li p, .header-right ul li a{font-size: 14px;}
+  .main-menu{position: relative; top: -75px;}
+
+  .inner-banner{min-height: 240px;}
+  .inner-banner h1{font-size: 35px;}
+  .inner-banner .container-fluid{align-items: center; padding-bottom: 0px;}
+  .inner-banner p{margin-top: 0px;}
+
+  .cemetery-register .row{margin-top: -39px;}
+  .cemetery-register .pagination ul{padding-left: 0px;}
+  .cemetery-register .pagination ul li a{width: 27px; height: 27px;}
+  .cemetery-register .container{max-width: 98%;}
+  .cemetery-register .table thead::after, .cemetery-register .table thead::before{display: none;}
+  .cemetery-register .table{border-right:0px;}
+  .cemetery-register .table tbody tr td:last-child{border-right:1px solid #ccc;}
+
+  .cemetery-maps { padding: 60px 0px;}
+  .cemetery-maps h3{font-size: 24px; margin-bottom: 30px;}
+  .cemetery-maps-left p::after{bottom: -11px;}
+  
+}
+@media only screen and (max-width: 575px) {
+  .content-title{font-size: 50px;}
+}
+@media only screen and (max-width: 480px) {
+  .sidenav{position: absolute;}
+  .sidenav {padding-top: 0px;}
+  .sidenav a {font-size: 14px;}
+  .main-menu{top: 20px;  position: relative; right: 5px; position: absolute;}
+  .content-title{font-size: 50px;}
+  .background a{font-size: 20px;}
+  .main-menu img{width: 9%;}
+  .sidenav .closebtn{top: 0; padding: 0px;}
+
+  .inner-banner h1{font-size: 24px; margin-top: 45px;}
+
+  .cemetery-register .pagination{width: 10%; background: #272d5d; height: 100%; margin-bottom: 0px;}
+  .change{right: inherit;}
+  .registreation-right{width: 90%; margin-left: 0px; position: absolute; right: 0px;}
+  .cemetery-register .table{width: 100%;}
+
+  .cemetry-history h2, .cemetery-maps h3{font-size: 18px; line-height: 30px;}
+  .cemetry-history h2 br{display: none;}
+
+  .cemetery-contact{padding: 30px 0px;}
+  .cemetery-contact h2 br{display: none;}
+
+  .cemetery-moses{padding: 30px 0px;}
+  .cemetery-moses p{width: 100%;}
+}
+@media only screen and (max-width:360px) {
+  .content-title{font-size: 35px;}
+  .main-menu{top: 5px; right: -8px;}
+}
+@media screen and (max-height:320px) {
+  
+}
+
+
+

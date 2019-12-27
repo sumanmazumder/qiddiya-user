@@ -1,0 +1,158 @@
+@import '../../../styles.scss';
+.delegate_details{
+    .heading{
+        p{
+            color: $secondary-color;
+        }
+    }
+    .delegate_details_section{
+        padding: 0px 15px;
+    }
+    .edit-persion{
+        border-radius: 5px;
+        border:1px solid $primery-color;
+        padding: 15px 15px;
+        display: inline-block;
+        .edit-persion-header{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            h3{
+                font-size: $small-font;
+                color: $primery-color;
+                margin-bottom: 0px;
+            }
+            img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+        ul{
+            li{
+                float: left;
+                width: 100%;
+                @extend %flexPrpperty;
+                align-items: flex-start;
+                margin-bottom: 5px;
+                label{
+                    font-size: $small-font;
+                    color: $primery-color;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    font-weight: 400;
+                    float: left;
+                    margin-right: 10px;
+                    margin-bottom: 0px;
+                }
+                p{
+                    color: $secondary-color;
+                    font-size: $small-font;
+                    margin: 0px;
+                    line-height: 20px;
+                    
+                    a{
+                        font-weight: 300;
+                        color: $secondary-color;
+                        font-size: $small-font;
+                    }
+                }
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+    .delegate_details_list{
+        margin-top: 25px;
+        tr{
+            th{
+                // border:1px solid $gray-color;
+                padding:0px;
+                p{
+                    margin-bottom: 0px;
+                    background-color: $primery-color;
+                    color: #ffffff;
+                    font-size: $small-font;
+                    text-transform: uppercase;
+                    border-radius: 5px;
+                    font-weight: 400;
+                    padding: 5px 0px;
+                    margin:5px;
+                }
+                &:last-child{
+                    background-color: transparent;
+                    border:0px;
+                    color: $primery-color;
+                }
+            }
+            td{
+                border:0px;
+                
+                // display: inline-block;
+                text-align: left;
+                padding: 0px !important;
+                p{
+                    margin-bottom: 0px;
+                    border:1px solid $gray-color;
+                    border-radius: 3px;
+                    font-size: $small-font;
+                    font-weight: 400;
+                    color: $gray-color;
+                    padding: 5px 5px;
+                    margin: 5px;
+                    margin-bottom: 0px;
+                }
+                &:last-child{
+                    background-color: transparent;
+                    border:0px;
+                    text-align: center;
+                    display: flex;
+                    justify-content: space-evenly;
+                    img{
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    .delegate_details_left{
+        border-radius: 15px;
+        border:1px solid $primery-color;
+        height: 100%;
+        overflow: hidden;
+        h3{
+            font-size: $midium-font;
+            color: $primery-color;
+            margin-bottom: 0px;
+            text-transform: uppercase;
+        }
+        ul{
+            
+            
+            width: 100%;
+            li{
+                
+                a{
+                    font-size: $midium-font;
+                    color: $primery-color;
+                    padding: 10px 0px;
+                    padding-left: 30px;
+                    width: 100%;
+                    &:hover{
+                        background-color: #ededed;
+                        
+                    }
+                }
+            }
+        }
+        .logOut{
+            text-transform: uppercase;
+            color: $gray-color;
+            margin-top: 15px;
+            font-size: $midium-font;
+        }
+    }
+}
